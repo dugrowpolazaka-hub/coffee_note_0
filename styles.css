@@ -56,6 +56,7 @@ p{
   text-justify:inter-word;
   line-height:1.8;
   margin:0 0 1.2rem 0;
+  text-indent:1.5rem;  /* ← Adicione isto */
 }
 
 /* Não recuar o primeiro parágrafo após um título */
