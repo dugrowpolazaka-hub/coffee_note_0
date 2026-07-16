@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Coffee Note</title>
+  <title>Mathematical Notes</title>
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -11,6 +11,7 @@
   <script>
     window.MathJax = {
       tex: {
+        tags: 'ams',              // habilita numeração automática
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         displayMath: [['$$', '$$'], ['\\[', '\\]']]
       }
@@ -28,81 +29,104 @@
 
 <body>
 
-  <header class="site-header">
-    <div class="container">
-      <h1>Coffee Note</h1>
-      <p class="tagline">Notes, beans, and brewing thoughts.</p>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container">
+    <h1>Mathematical Notes</h1>
+    <p class="tagline">
+      Exploring mathematics, physics and engineering.
+    </p>
+  </div>
+</header>
 
-  <main class="container">
+<main class="container">
 
-    <section class="hero">
-      <h2>Welcome</h2>
+<section class="hero">
 
-      <p>
-        This is a simple starter page for your coffee notes website.
-        Edit the content below to get started.
-      </p>
+<h2>Fourier Analysis</h2>
 
-      <p>
-        Einstein's famous equation:
-      </p>
+<p>
+Fourier analysis is one of the fundamental tools of modern mathematics.
+Its central idea is that many functions can be represented as a combination
+of simple sinusoidal waves. This concept forms the basis of signal
+processing, image compression, communications, quantum mechanics and many
+other areas of science and engineering.
+</p>
 
-      $$
-      E = mc^2
-      $$
+<p>
+The Fourier transform converts a function from the time domain into its
+frequency representation, revealing the frequencies that compose the
+original signal.
+</p>
 
-      <p>
-        Another famous equation is the Gaussian integral:
-      </p>
+\[
+\begin{equation}
+F(\omega)=
+\int_{-\infty}^{\infty}
+f(t)e^{-j\omega t}\,dt
+\end{equation}
+\]
 
-      $$
-      \int_{-\infty}^{\infty} e^{-x^2}\,dx=\sqrt{\pi}
-      $$
+<p>
+The inverse Fourier transform reconstructs the original function from its
+frequency spectrum.
+</p>
 
-    </section>
+\[
+\begin{equation}
+f(t)=
+\frac{1}{2\pi}
+\int_{-\infty}^{\infty}
+F(\omega)e^{j\omega t}\,d\omega
+\end{equation}
+\]
 
-    <section class="notes">
-      <h3>Latest Notes</h3>
+</section>
 
-      <article class="note">
-        <h4>Colombia Single Origin</h4>
-        <p>Flavor: chocolate, citrus — Brew: V60, 1:16, 92°C</p>
-      </article>
+<section class="notes">
 
-      <article class="note">
-        <h4>Experiment: Cold Brew</h4>
-        <p>24-hour steep, 1:8 ratio — smooth and low-acidity.</p>
-      </article>
+<h3>Applications</h3>
 
-    </section>
+<article class="note">
+<h4>Signal Processing</h4>
+<p>
+Filtering, spectral estimation, modulation and digital communications all
+depend heavily on Fourier methods.
+</p>
+</article>
 
-    <section class="about">
-      <h3>About</h3>
+<article class="note">
+<h4>Physics</h4>
+<p>
+Wave propagation, optics, heat transfer and quantum mechanics are naturally
+expressed in terms of frequency-domain representations.
+</p>
+</article>
 
-      <p>
-        Use this repo to collect tasting notes, brewing recipes, and photos of your favorite beans.
-      </p>
+</section>
 
-      <p>
-        Inline equation example:
-        $a^2+b^2=c^2$
-      </p>
+<section class="about">
 
-    </section>
+<h3>About</h3>
 
-  </main>
+<p>
+This website is dedicated to short mathematical notes, derivations and
+interesting ideas related to mathematics, physics and engineering.
+</p>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Coffee Note</small>
-    </div>
-  </footer>
+</section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<small>© <span id="year"></span> Mathematical Notes</small>
+</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+new Date().getFullYear();
+</script>
 
 </body>
 </html>
