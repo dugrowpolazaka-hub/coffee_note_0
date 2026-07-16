@@ -39,6 +39,41 @@ body{
   padding:1.5rem;
 }
 
+
+
+/* ================= TEXT ================= */
+
+h1,
+h2,
+h3,
+h4{
+  color:var(--accent);
+}
+
+p{
+  color:var(--text);
+  text-align:justify;
+  text-justify:inter-word;
+  line-height:1.8;
+  margin:0 0 1.2rem 0;
+}
+
+/* Não recuar o primeiro parágrafo após um título */
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p{
+  text-indent:0;
+}
+
+
+
+
+
+
+
+
+
 /* ================= HEADER ================= */
 
 .site-header{
