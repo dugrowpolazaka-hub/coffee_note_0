@@ -4,9 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Coffee Note</title>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Configuração do MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+
+  <!-- Biblioteca MathJax -->
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
 </head>
+
 <body>
+
   <header class="site-header">
     <div class="container">
       <h1>Coffee Note</h1>
@@ -15,27 +36,62 @@
   </header>
 
   <main class="container">
+
     <section class="hero">
       <h2>Welcome</h2>
-      <p>This is a simple starter page for your coffee notes website. Edit the content below to get started.</p>
+
+      <p>
+        This is a simple starter page for your coffee notes website.
+        Edit the content below to get started.
+      </p>
+
+      <p>
+        Einstein's famous equation:
+      </p>
+
+      $$
+      E = mc^2
+      $$
+
+      <p>
+        Another famous equation is the Gaussian integral:
+      </p>
+
+      $$
+      \int_{-\infty}^{\infty} e^{-x^2}\,dx=\sqrt{\pi}
+      $$
+
     </section>
 
     <section class="notes">
       <h3>Latest Notes</h3>
+
       <article class="note">
         <h4>Colombia Single Origin</h4>
         <p>Flavor: chocolate, citrus — Brew: V60, 1:16, 92°C</p>
       </article>
+
       <article class="note">
         <h4>Experiment: Cold Brew</h4>
         <p>24-hour steep, 1:8 ratio — smooth and low-acidity.</p>
       </article>
+
     </section>
 
     <section class="about">
       <h3>About</h3>
-      <p>Use this repo to collect tasting notes, brewing recipes, and photos of your favorite beans.</p>
+
+      <p>
+        Use this repo to collect tasting notes, brewing recipes, and photos of your favorite beans.
+      </p>
+
+      <p>
+        Inline equation example:
+        $a^2+b^2=c^2$
+      </p>
+
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -45,7 +101,8 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
