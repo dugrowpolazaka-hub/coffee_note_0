@@ -1,23 +1,198 @@
-/* ================= TEXT ================= */
+:root{
+  --bg:#0f172a;
+  --bg-secondary:#1e293b;
+  --surface:#111827;
+  --surface-light:#1f2937;
 
-h1, h2, h3, h4{
+  --text:#e5e7eb;
+  --text-secondary:#94a3b8;
+
+  --accent:#60a5fa;
+  --accent-hover:#93c5fd;
+
+  --border:#334155;
+
+  --container:1100px;
+  --radius:10px;
+  --gap:1rem;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+.container{
+  max-width:var(--container);
+  margin:auto;
+  padding:1.5rem;
+}
+
+/* ================= HEADER ================= */
+
+.site-header{
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+}
+
+.site-header h1{
+  margin:0;
+  color:var(--accent);
+  font-size:2rem;
+  font-weight:700;
+}
+
+.tagline{
+  margin-top:.4rem;
+  color:var(--text-secondary);
+}
+
+/* ================= CARDS ================= */
+
+.hero,
+.about,
+.note{
+  background:var(--bg-secondary);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 8px 25px rgba(0,0,0,.35);
+}
+
+.hero{
+  padding:2rem;
+  margin:2rem 0;
+}
+
+.about{
+  padding:1.5rem;
+}
+
+.notes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:var(--gap);
+  margin:2rem 0;
+}
+
+.note{
+  padding:1.2rem;
+  transition:.25s;
+}
+
+.note:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent);
+}
+
+.note h4{
+  margin-top:0;
+  color:var(--accent);
+}
+
+.note p{
+  color:var(--text-secondary);
+}
+
+/* ================= HEADINGS ================= */
+
+h1,h2,h3,h4{
   color:var(--accent);
 }
 
 p{
   color:var(--text);
-  text-align:justify;      /* Justified text */
-  text-indent:2em;         /* First-line indentation */
-  line-height:1.9;         /* Comfortable line spacing */
-  margin-top:0;
-  margin-bottom:1.4em;     /* Space between paragraphs */
-  hyphens:auto;            /* Automatic hyphenation (supported browsers) */
 }
 
-/* Do not indent the first paragraph after a heading */
-h1 + p,
-h2 + p,
-h3 + p,
-h4 + p{
-  text-indent:0;
+/* ================= LINKS ================= */
+
+a{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+a:hover{
+  color:var(--accent-hover);
+  text-decoration:underline;
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer{
+  text-align:center;
+  padding:2rem 0;
+  margin-top:3rem;
+  color:var(--text-secondary);
+  border-top:1px solid var(--border);
+}
+
+/* ================= MATHJAX ================= */
+
+/* Cor das equações */
+mjx-container{
+  color:var(--text) !important;
+  font-size:115%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:.5rem 0;
+}
+
+/* Equações destacadas */
+mjx-container[display="true"]{
+  margin:1.5rem auto !important;
+}
+
+/* Numeração das equações */
+mjx-container .mjx-tag{
+  color:var(--text-secondary) !important;
+}
+
+/* ================= CODE ================= */
+
+pre,
+code{
+  font-family:Consolas,Menlo,Monaco,monospace;
+}
+
+pre{
+  background:#020617;
+  color:#d1d5db;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:1rem;
+  overflow:auto;
+}
+
+code{
+  background:#1e293b;
+  padding:.15rem .35rem;
+  border-radius:4px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:700px){
+
+  .container{
+    padding:1rem;
+  }
+
+  .hero{
+    padding:1.4rem;
+  }
+
+  h1{
+    font-size:1.7rem;
+  }
+
 }
