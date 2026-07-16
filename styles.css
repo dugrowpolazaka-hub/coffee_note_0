@@ -1,78 +1,198 @@
 :root{
-  --bg:#fffaf6;
-  --accent:#6b3f2d;
-  --muted:#6d6d6d;
+  --bg:#0f172a;
+  --bg-secondary:#1e293b;
+  --surface:#111827;
+  --surface-light:#1f2937;
+
+  --text:#e5e7eb;
+  --text-secondary:#94a3b8;
+
+  --accent:#60a5fa;
+  --accent-hover:#93c5fd;
+
+  --border:#334155;
+
   --container:1100px;
-  --radius:8px;
+  --radius:10px;
   --gap:1rem;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  background:linear-gradient(180deg,#fffaf6 0%, #f7f1ea 100%);
-  color:var(--accent);
-  line-height:1.5;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
 }
 
 .container{
   max-width:var(--container);
-  margin:0 auto;
-  padding:1rem;
+  margin:auto;
+  padding:1.5rem;
 }
+
+/* ================= HEADER ================= */
 
 .site-header{
-  background:rgba(107,63,45,0.08);
-  border-bottom:1px solid rgba(107,63,45,0.06);
-  padding:1.25rem 0;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
 }
+
 .site-header h1{
   margin:0;
-  font-size:1.5rem;
-  letter-spacing:0.6px;
+  color:var(--accent);
+  font-size:2rem;
+  font-weight:700;
 }
-.tagline{color:var(--muted); margin-top:0.25rem;}
+
+.tagline{
+  margin-top:.4rem;
+  color:var(--text-secondary);
+}
+
+/* ================= CARDS ================= */
+
+.hero,
+.about,
+.note{
+  background:var(--bg-secondary);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 8px 25px rgba(0,0,0,.35);
+}
 
 .hero{
-  background:#fff;
-  padding:1.25rem;
-  border-radius:var(--radius);
-  margin:1rem 0;
-  box-shadow:0 6px 18px rgba(107,63,45,0.05);
+  padding:2rem;
+  margin:2rem 0;
+}
+
+.about{
+  padding:1.5rem;
 }
 
 .notes{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:var(--gap);
-  margin-bottom:1rem;
+  margin:2rem 0;
 }
-.note{
-  background:rgba(255,255,255,0.9);
-  padding:0.9rem;
-  border-radius:6px;
-  border:1px solid rgba(107,63,45,0.04);
-}
-.note h4{margin:0 0 0.35rem 0; font-size:1.05rem;}
-.note p{margin:0; color:var(--muted); font-size:0.95rem;}
 
-.about{
-  background:#fff;
-  padding:1rem;
-  border-radius:6px;
-  border:1px solid rgba(107,63,45,0.03);
+.note{
+  padding:1.2rem;
+  transition:.25s;
 }
+
+.note:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent);
+}
+
+.note h4{
+  margin-top:0;
+  color:var(--accent);
+}
+
+.note p{
+  color:var(--text-secondary);
+}
+
+/* ================= HEADINGS ================= */
+
+h1,h2,h3,h4{
+  color:var(--accent);
+}
+
+p{
+  color:var(--text);
+}
+
+/* ================= LINKS ================= */
+
+a{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+a:hover{
+  color:var(--accent-hover);
+  text-decoration:underline;
+}
+
+/* ================= FOOTER ================= */
 
 .site-footer{
   text-align:center;
-  padding:1rem 0;
-  color:var(--muted);
-  margin-top:2rem;
-  font-size:0.9rem;
+  padding:2rem 0;
+  margin-top:3rem;
+  color:var(--text-secondary);
+  border-top:1px solid var(--border);
 }
 
-/* Responsive tweaks */
-@media (min-width:720px){
-  .site-header, .container{padding-left:1.5rem; padding-right:1.5rem;}
+/* ================= MATHJAX ================= */
+
+/* Cor das equações */
+mjx-container{
+  color:var(--text) !important;
+  font-size:115%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:.5rem 0;
+}
+
+/* Equações destacadas */
+mjx-container[display="true"]{
+  margin:1.5rem auto !important;
+}
+
+/* Numeração das equações */
+mjx-container .mjx-tag{
+  color:var(--text-secondary) !important;
+}
+
+/* ================= CODE ================= */
+
+pre,
+code{
+  font-family:Consolas,Menlo,Monaco,monospace;
+}
+
+pre{
+  background:#020617;
+  color:#d1d5db;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:1rem;
+  overflow:auto;
+}
+
+code{
+  background:#1e293b;
+  padding:.15rem .35rem;
+  border-radius:4px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:700px){
+
+  .container{
+    padding:1rem;
+  }
+
+  .hero{
+    padding:1.4rem;
+  }
+
+  h1{
+    font-size:1.7rem;
+  }
+
 }
