@@ -69,11 +69,6 @@ h4 + p{
 
 
 
-
-
-
-
-
 /* ================= HEADER ================= */
 
 .site-header{
@@ -137,6 +132,8 @@ h4 + p{
 
 .note p{
   color:var(--text-secondary);
+  text-align:justify;
+  text-justify:inter-word;
 }
 
 /* ================= HEADINGS ================= */
